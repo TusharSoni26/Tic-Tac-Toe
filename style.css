@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins",sans-serif;
+}
+
+body{
+    background: #43ac;
+}
+.select-box{
+    /* display: none; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    padding: 20px 25px 20px;
+    border-radius: 7px;
+    max-width: 380px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.select-box.hide{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.95);
+}
+
+.select-box header{
+    font-size: 23px;
+    font-weight: 600;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.select-box .content .title{
+    font-size: 18px;
+    font-weight: 530;
+    margin: 20px 0;
+}
+
+.select-box .options{
+    width: 100%;
+    display: flex;
+}
+
+.options button{
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 7px 0;
+    background: #43acdf;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+.options button:hover{
+    transform: scale(0.96);
+}
+.options button.playerA{
+    margin-right: 5px;
+}
+.options button.playerB{
+    margin-left: 5px;
+}
+
+/* Select mode css */
+.select-mode{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.95);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    padding: 20px 25px 20px;
+    border-radius: 7px;
+    max-width: 350px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.select-mode.hide{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.95);
+    cursor: default;
+}
+
+.select-mode.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.select-mode header{
+    font-size: 23px;
+    font-weight: 600;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.select-mode .content2 .title2{
+    font-size: 18px;
+    font-weight: 530;
+    margin: 20px 0;
+}
+
+.select-mode .options2{
+    width: 100%;
+    display: flex;
+}
+
+.options2 button{
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 7px 0;
+    background: #43acdf;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+.select-mode .options2 button:hover{
+    transform: scale(0.96);
+}
+.select-mode .options2 button.modeA{
+    margin-right: 5px;
+}
+.select-mode .options button.modeB{
+    margin-left: 5px;
+}
+
+/* Playing area CSS */
+.playBoard{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.95);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 0.3s ease;
+}
+
+.playBoard.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,-50%) scale(1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 0.3s ease;
+}
+
+.playBoard.hide{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.95);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 0.3s ease;
+}
+
+.playBoard .details{
+    background: #fff;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.playBoard .details .players{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
+}
+
+.players.active span:first-child{
+    color: #43acdf;
+}
+
+.players.active span:nth-child(2){
+    color: #fff;
+}
+
+.players.active .slider{
+    left: 50%;
+}
+
+.playBoard .details span{
+    width: 100%;
+    border-radius: 4px;
+    font-size: 19px;
+    font-weight: 500;
+    padding: 7px 0;
+    text-align-last: center;
+    cursor: default;
+    color: #43acdf;
+    position: relative;
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+
+.details span.active{
+    color: #fff;
+}
+
+.details .slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #43acdf;
+    height: 100%;
+    width: 50%;
+    border-radius: 5px;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.details span:first-child{
+    color: #fff;
+}
+
+.playBoard .playArea{
+    margin-top: 20px;
+}
+
+.playBoard section{
+    display: flex;
+}
+
+.playBoard section span{
+    display: block;
+    margin: 2px;
+    height: 80px;
+    width: 80px;
+    border-radius: 5px;
+    background: #fff;
+    font-size: 40px;
+    text-align: center;
+    line-height: 80px;
+    color: #43acdf;
+}
+
+.result{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.95);
+    background: #fff;
+    padding: 20px;
+    border-radius: 7px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 400px;
+    width: 100%;
+    transition: all 1.0s ease;
+}
+
+.result.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.result .won{
+    font-size: 25px;
+    font-weight: 550;
+    display: flex;
+    justify-content: center;
+}
+
+.result .won p{
+    margin: 0 4px;
+    font-weight: 700;
+}
+
+.result .btn{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.result .btn button{
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 8px 20px;
+    background: #43acdf;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+
+.result .btn button:hover{
+    transform: scale(0.95);
+}
+
